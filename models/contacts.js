@@ -65,7 +65,7 @@ const getUsersList = async (showListAllСontacts = 1) => {
 
 //todo   ----------------------------  2. Создание НОВОГО списка ВСЕХ ПОЛЬЗОВАТЕЛЕЙ ----------------------------
 const writeUsers = async (contacts) => {
-  await fs.writeFile(contactsPath, JSON.stringify(contacts), 'utf8');
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2), 'utf8');
 
   //! ===========================console============================
   if (contacts.length !== 0) {
@@ -75,7 +75,7 @@ const writeUsers = async (contacts) => {
   //! ==============================================================
 
   return contacts;
-  // return await fs.writeFile(contactsPath, JSON.stringify(users));
+  // return await fs.writeFile(contactsPath, JSON.stringify(users, null, 2));
 };
 //* ____________________________________________________________________________________________________________________
 
